@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+		<script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}" ></script>
+		<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}" ></script>
+		<script type="text/javascript" src="{% static 'js/login.js' %}" ></script>
+	</head>
+	<body>
+		<!--主体内容-->
+		<div class="register">
+			<div class="zcLogo">
+				<a href="{% url 'ma:index' %}">
+                    <img src="{% static 'img/miya.jpg' %}">
+                </a>
+			</div>
+			<div class="bjtp">
+				<img src="{% static 'imag/bjtp.jpg' %}">
+			</div>
+			<div class="zhuce">
+				<div class="zhuceTop">
+					<span class="zctLeft">登录蜜芽</span>
+					<span class="zctRight">
+						<i>还没有蜜芽账号？</i>
+						<a href="{% url 'ma:register' %}" target="_blank">30秒注册</a>
+					</span>
+				</div>
+				<!--表单-->
+				<form class="form" action="{% url 'ma:login' %}">
+					<input type="text" id="haoma" placeholder="手机号" class="text">
+					<p class="kong">手机号不能为空</p>
+					<p class="kongkong">手机号错误</p>
+
+					<input type="password" id="password" class="pass" placeholder="密码">
+					<p class="kong1">密码不能为空</p>
+					<p class="kong1kong1">密码错误</p>
+
+
+					<p class="kong3">输入的验证码错误</p>
+					<div class="yan">
+						<input type="text" id="yzm" placeholder="输入验证码" class="yam">
+						<input type="text" id="code1" value="" class="code" style="color: rgb(223, 154, 95);">
+						<a href="#" id="look">看不清</a>
+					</div>
+					<p class="zdong">
+						<input checked="checked" id="agreeuser" type="checkbox" class="gou">自动登入
+						<span class="wj">
+							忘记密码？
+						</span>
+					</p>
+					<p class="tiqiao">
+						<a href="{% url 'ma:index' %}" class="go" id="come">登录</a>
+					</p>
+				</form>
+			</div>
+		</div>
+
+		<!--尾部-->
+		<div class="reglast">
+			Copyright ©2016 北京花旺在线商贸有限公司 Miyabaobei.com 保留一切权利。客服热线： 400-789-2000。京ICP证140430号 京ICP备14006215号
+		</div>
+</body>
+</html>

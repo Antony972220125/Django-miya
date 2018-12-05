@@ -1,0 +1,51 @@
+body{font-size: 12px;color:#666 ;}
+/*logo*/
+.logo .rightStep{width: 454px;height: 80px;float: right;}
+.logo .rightStep .step{background: url(../images/cart_step.png) no-repeat;width: 435px;height: 42px;margin-top: 30px;line-height: 42px;}
+.logo .rightStep .step li{float: left;width: 120px;padding-left: 25px;}
+.logo .rightStep .step .stepLi{color: white;}
+
+/*我的购物车*/
+.myCart{width: 1100px;margin: 0 auto;}
+.myCart .myTop{overflow: hidden;border-bottom: 2px solid #eaeaea;border-top: none;padding: 10px 0px;margin-left: 10px;margin-right: 10px;font-size: 24px;color: #666;}
+.myCart .myTop span{border-bottom: 2px solid #fa4b9b;padding-bottom: 10px;padding-right: 10px;color: #333;}
+.myCart .option{width: 1070px;height: 26px;padding: 15px;}
+.myCart .option .allselect{width: 87px;float: left;text-align: left !important;margin-left: 20px;font-size: 12px;color: #666;}
+.myCart .option .allselect .icheck{top: -4px;background:url(../images/dianjibj.png);background-repeat: repeat-y;width: 23px;height: 22px;display: inline-block;left: 2px;}
+.myCart .option .allselect .icheck .mckall{margin-bottom: 0;margin-right: 5px;}
+.myCart .option .gs{float: left;width: 135px;border-left: 1px solid #ddd;text-align: center;}
+.myCart .option .gs1{width: 280px;}
+
+/*购物车详情*/
+.details{width: 1068px;margin: 0 auto;overflow: hidden;min-height: 200px;_height:200p;border: 1px solid #ededed;}
+.details .boxBox .tuLeft{overflow: hidden;clear: both;float:left;width: 77px;height: 77px;border: 1px solid #ddd;margin: 14px;cursor: pointer;position: relative;}
+.details .boxBox .tuLeft img{width: 77px;height: 77px;}
+.details .boxBox .pRight{float: left;margin: 14px;cursor: pointer; width: 280px;}
+.details .boxBox .pRight:hover{color: #fa4b9b;}
+.details .boxBox .pCenter{float: left;margin: 14px;margin-left: 160px;}
+.details .boxBox .addnumT{left:50px;margin: 14px;width: 76px;height: 28px;border: 1px solid #b3b3b3;position: relative;float: left;}
+.details .boxBox .addnumT .jianT{display:inline-block;float:left;width: 24px;height: 28px;background: url(../images/allimg.png)no-repeat  0px -150px;}
+.details .boxBox .addnumT .bjT{display:inline-block;float:left;width: 24px;height: 28px;background: url(../images/allimg.png)no-repeat -100px -150px;/*background-position: -100px -150px;*/}
+.details .boxBox .addnumT .numbianT{text-align: center;width: 28px;background-color: #fff;float: left;height: 28px;line-height: 28px;font-style: normal;font-size: 12px;}
+.details .boxBox .addnumT .jiaT{float: left;width: 24px;height: 28px;cursor: pointer;background: url(../images/allimg.png)no-repeat center;background-position:-50px -150px;}
+.details .boxBox .lastPic{margin: 14px;float: left;margin-left: 120px;color: #ff69b4;}
+.details .boxBox .dela{display: inline-block;margin: 14px;float: right;margin-right: 56px;}
+.details .boxBox .dela:hover{color: #fa4b9b;}
+.details .boxBox .bigTu{width: 200px;height: 200px;background: red;display: none;z-index: 10;overflow: hidden;clear: both;}
+.details .boxBox .bigTu img{width: 200px;height: 200px;}
+.empty{width: 900px;height: 240px;background:url(../images/empty_icon.jpg) no-repeat 150px 90px;display: block;margin: -246px 0 0 257px;}
+.empty .baby{width: 700px;height: 54px;font-size: 30px;color: #ccc;margin: 0px 0 0px 257px;padding-top: 100px;}
+.empty .index{width: 700px;height:17px;color: #666;font-size: 12px;margin-left: 262px;}
+.empty .index a{font-size: 14px;font-weight: 700;color: #f450a2;}
+
+/*结算*/
+.money{width: 1066px;margin: 0 auto;border: 1px solid #ddd;border-right: none;height: 58px;margin-top: 50px;margin-bottom: 50px;display: none;}
+.money  .allselect2{margin: 24px 0 0 15px;width: 87px;text-align: left !important;font-size: 12px;color: #666;float: left;}
+.money  .allselect2 .icheck2{top: -4px;/*background:url(../images/dianjibj.png);background-repeat: repeat-y;*/width: 23px;height: 22px;display: inline-block;left: 2px;}
+.money .allselect2 .icheck2 .mckall2{margin-bottom: 0;margin-right: 5px;}
+.money .leiji{width: 335px;height: 58px;float: left;margin-left: 430px;}
+.money .leiji .zjp{line-height: 58px;}
+.money .leiji .zjp span{color: #333;font-weight: 700;line-height: 18px;}
+.money .leiji .zjp span .numnum{font-style: normal;font-size: 18px;color: #fa4b9b;font-weight: 400;}
+.money .leiji .zjp span .jiaqian{font-size: 18px;color: #fa4b9b;font-weight: 400;font-style: normal;}
+.money .last{float: right;text-align: center;color: #fff;background-color: #fa4b9b;border: 1px solid #fa4b9b;line-height: 56px;margin-top: 0;padding: 0 19px;font-size: 19.5px;cursor: pointer;}
