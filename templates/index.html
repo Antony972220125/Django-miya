@@ -28,7 +28,15 @@
             <span class="nihao">你好，欢迎来到蜜芽 !</span>
             <div id="addname"></div>
             <ul>
-                <li><a href="{% url 'ma:login' %}" class="lis">登录</a></li>
+                <li>
+                    <a href="{% url 'ma:login' %}" class="lis">
+                    {% if username %}
+                          用户: {{ username }}
+                    {% else %}
+                        登录
+                    {% endif %}
+                    </a>
+                </li>
                 <li><a href="{% url 'ma:register' %}">免费注册</a></li>
             </ul>
             <p>帮助中心</p>

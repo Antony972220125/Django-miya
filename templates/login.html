@@ -6,9 +6,10 @@
 		<meta charset="UTF-8">
 		<title>登录</title>
 		<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/register.css' %}">
 		<script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}" ></script>
-		<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}" ></script>
-		<script type="text/javascript" src="{% static 'js/login.js' %}" ></script>
+{#		<script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}" ></script>#}
+{#		<script type="text/javascript" src="{% static 'js/login.js' %}" ></script>#}
 	</head>
 	<body>
 		<!--主体内容-->
@@ -30,22 +31,26 @@
 					</span>
 				</div>
 				<!--表单-->
-				<form class="form" action="{% url 'ma:login' %}">
-					<input type="text" id="haoma" placeholder="手机号" class="text">
-					<p class="kong">手机号不能为空</p>
-					<p class="kongkong">手机号错误</p>
+				<form class="form" action="{% url 'ma:login' %}" method="post">
+                    {% csrf_token %}
+					<input type="text" class="text" placeholder="用户名" name="username"/>
+{#					<p class="kong">手机号不能为空</p>#}
+{#					<p class="kongkong">手机号错误</p>#}
 
-					<input type="password" id="password" class="pass" placeholder="密码">
-					<p class="kong1">密码不能为空</p>
-					<p class="kong1kong1">密码错误</p>
+					<input type="password" class="pass" placeholder="密码" name="password">
+                    {% if err %}
+                         <p style="color: red">{{ err }}</p>
+                    {% endif %}
+{#					<p class="kong1">密码不能为空</p>#}
+{#					<p class="kong1kong1">密码错误</p>#}
 
 
-					<p class="kong3">输入的验证码错误</p>
-					<div class="yan">
-						<input type="text" id="yzm" placeholder="输入验证码" class="yam">
-						<input type="text" id="code1" value="" class="code" style="color: rgb(223, 154, 95);">
-						<a href="#" id="look">看不清</a>
-					</div>
+{#					<p class="kong3">输入的验证码错误</p>#}
+{#					<div class="yan">#}
+{#						<input type="text" id="yzm" placeholder="输入验证码" class="yam">#}
+{#						<input type="text" id="code1" value="" class="code" style="color: rgb(223, 154, 95);">#}
+{#						<a href="#" id="look">看不清</a>#}
+{#					</div>#}
 					<p class="zdong">
 						<input checked="checked" id="agreeuser" type="checkbox" class="gou">自动登入
 						<span class="wj">
@@ -53,7 +58,8 @@
 						</span>
 					</p>
 					<p class="tiqiao">
-						<a href="{% url 'ma:index' %}" class="go" id="come">登录</a>
+{#						<a href="{% url 'ma:index' %}" class="go" id="come">登录</a>#}
+                        <input type="submit" class="go"  value="登录">
 					</p>
 				</form>
 			</div>
