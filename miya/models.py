@@ -8,3 +8,7 @@ class User(models.Model):
     password = models.CharField(max_length=100)
     tel = models.CharField(max_length=20)
     token = models.CharField(max_length=256, default='')
+
+
+class Wheel(models.Model):
+    img = models.CharField(max_length=50)

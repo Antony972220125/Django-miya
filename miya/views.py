@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
-from miya.models import User
+from miya.models import User, Wheel
 
 
 def index(request):
@@ -15,7 +15,8 @@ def index(request):
         user = User.objects.get(token=token)
         return render(request, 'index.html', context={'username': user.username})
     else:
-        return render(request, 'index.html')
+        wheels = Wheel.objects.all()
+        return render(request, 'index.html', context={'wheels': wheels})
 
 
 def genereate_pd(password):

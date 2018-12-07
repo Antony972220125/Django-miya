@@ -13,6 +13,13 @@ $(function(){
 	$(".menu .dls").mouseout(function(){
 		$(".menu .dls").css({"display":"none"});
 	});
+	$(".tit").mouseenter(function () {
+		$(".dls").css({display: 'block'})
+	});
+	$(".tit").mouseleave(function () {
+		$(".dls").css({display: 'none'})
+	});
+
 	
 	/*切换图*/
 	function fdj(){
