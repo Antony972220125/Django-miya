@@ -81,7 +81,7 @@ def login(request):
             user.token = generate_token()
             user.save()
             request.session['token'] = user.token
-            request.session.set_expiry(60*10)
+            request.session.set_expiry(60)
             return response
         else:
             return render(request, 'login.html', context={'err': '用户名或密码错误'})
@@ -91,7 +91,12 @@ def login(request):
 
 
 def cart(request):
-    return render(request, 'cart.html')
+    token = request.session.get('token')
+    if token:
+        user = User.objects.get(token=token)
+        return render(request, 'cart.html', context={'username': user.username})
+    else:
+        return render(request, 'cart.html')
 
 
 def GoodsShow(request):
@@ -103,4 +108,13 @@ def GoodsShow(request):
         'singlegoods2': singlegoods2,
     }
 
-    return render(request, 'GoodsShow.html', context=data)
+    token = request.session.get('token')
+    if token:
+        user = User.objects.get(token=token)
+        return render(request, 'GoodsShow.html', context={
+            'username': user.username,
+            'singlegoods': singlegoods,
+            'singlegoods2': singlegoods2,
+        })
+    else:
+        return render(request, 'GoodsShow.html', context=data)

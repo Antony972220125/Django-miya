@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>商品详情</title>
-   <link rel="stylesheet" href="{% static 'css/xiangiqng.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/xiangiqng.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
     <script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}"></script>
@@ -27,11 +27,11 @@
             <ul>
                 <li>
                     <a href="{% url 'ma:login' %}" class="lis">
-                    {% if username %}
-                          用户: {{ username }}
-                    {% else %}
-                        登录
-                    {% endif %}
+                        {% if username %}
+                            用户: {{ username }}
+                        {% else %}
+                            登录
+                        {% endif %}
                     </a>
                 </li>
                 <li><a href="{% url 'ma:register' %}">免费注册</a></li>
@@ -1416,10 +1416,10 @@
         </div>
         <div class="carBox">
             <div class="aBot" id="aBot">
-                <a href="##" class="join" id="join">加入购物车</a>
+                <a href="#" class="join" id="join">加入购物车</a>
             </div>
             <div class="collect" id="collect">
-                <a href="##" class="attendSubmit" id="attendSubmit">
+                <a href="#" class="attendSubmit" id="attendSubmit">
                     <i class="love"></i>
                     <span>收藏</span>
                 </a>
@@ -1458,312 +1458,316 @@
 <div class="introduction">
     <div class="right l" id="seeing">
         <div class="pubtittle">看了又看</div>
-            <div class="pubcon cp">
+        <div class="pubcon cp">
             {% for singlegood in singlegoods %}
-                 <div class="block">
-                <a href="#">
-                    <img src="{{ singlegood.img }}" alt="韩国进口时尚宝宝鞋动物豹纹系列 花豹" width="80" height="80">
-                </a>
-                <p class="tittt">
-                    <a href="#" title="韩国进口时尚宝宝鞋动物豹纹系列 花豹">{{ singlegood.title }}</a>
+                <div class="block">
+                    <a href="#">
+                        <img src="{{ singlegood.img }}" alt="韩国进口时尚宝宝鞋动物豹纹系列 花豹" width="80" height="80">
+                    </a>
+                    <p class="tittt">
+                        <a href="#" title="韩国进口时尚宝宝鞋动物豹纹系列 花豹">{{ singlegood.title }}</a>
 
-                </p>
-                <span class="pink">￥{{ singlegood.price }}</span>
-                <br>
-                <span class="gray"> </span>
-            </div>
+                    </p>
+                    <span class="pink">￥{{ singlegood.price }}</span>
+                    <br>
+                    <span class="gray"> </span>
+                </div>
             {% endfor %}
         </div>
     </div>
 
     <div class="left l" id="hash_myq">
- 		<div class="modulefixed" style="">
- 			<div class="modfixed">
- 				<ul class="title yahei">
- 					<li class="current">商品详情</li>
- 					<li>蜜芽圈(1475)</li>
- 					<li>蜜芽优势</li>
- 					<li>问题咨询</li>
- 				</ul>
- 			</div>
- 		</div>
- 		<div class="p10">
- 			<div class="area">
- 				<ul class="clearfix" id="wrap_con" style="height: 98px;">
- 					<li>
- 						<b>商品名称:</b>好奇 HUGGIES 铂金装 倍柔亲肤纸尿裤M72片
- 					</li>
- 					<li>
- 						<b>品牌:</b>好奇 HUGGIES 铂金装
- 					</li>
- 					<li>
- 						<b>分类:</b>纸尿裤
- 					</li>
- 					<li>
- 						<b>商品条码:</b>
- 					</li>
- 					<li>
- 						<b>尺码:</b>M
- 					</li>
- 					<li>
- 						<b>产地:</b>韩国
- 					</li>
- 					<li>
- 						<b>通用性别:</b>通用
- 					</li>
- 					<li>
- 						<b>片数:</b>72
- 					</li>
- 				</ul>
- 				<div id="read_more" style="cursor: pointer;">
- 					<a>展开</a>
- 				</div>
- 				<div class="clearfix datacon">
- 					<div class="dtit">
- 						<img src="{% static 'imag/sp02.gif' %}" alt="商品详情">
- 					</div>
- 					<img src="{% static 'imag/416e73a769d0ffabf2ff8de7655abe8b102757809.jpg' %}" class="lazyload" width="750px">
- 					<img src="{% static 'imag/204ed5e9156f65f25ff6a27748293c36.jpg' %}" class="lazyload" width="750px">
- 					<img src="{% static 'imag/111af0265470519375bbdc5a76be20f7.jpg' %}" class="lazyload" width="750px">
- 					<img src="{% static 'imag/d26597acc161a5cde08b8515621f7752.jpg' %}" class="lazyload" width="750px">
- 					<img src="{% static 'imag/a741c9b2dff16b3aae194e1831fb1084.jpg' %}" class="lazyload" width="750px">
- 					<img src="{% static 'imag/047f99fdecd521a1c9c74a3f5a0ae746.jpg' %}" class="lazyload" width="750px">
- 					<img src="{% static 'imag/ef22acc87b28309a0c6852d9629351a9.jpg' %}" class="lazyload" width="750px">
- 					<img src="{% static 'imag/1677937aaf37ffbb762dd28dc035f4d0.jpg' %}" class="lazyload" width="750px">
- 					<img src="{% static 'imag/3461f4b82ab4ba21377bcf0138526673.jpg' %}" class="lazyload" width="750px">
- 					<img src="{% static 'imag/a3352f3061dd10f87f3b892fdba8faa4945821872.jpg' %}" class="lazyload" width="750px">
- 					<div style="clear: both;"></div>
- 				</div>
+        <div class="modulefixed" style="">
+            <div class="modfixed">
+                <ul class="title yahei">
+                    <li class="current">商品详情</li>
+                    <li>蜜芽圈(1475)</li>
+                    <li>蜜芽优势</li>
+                    <li>问题咨询</li>
+                </ul>
+            </div>
+        </div>
+        <div class="p10">
+            <div class="area">
+                <ul class="clearfix" id="wrap_con" style="height: 98px;">
+                    <li>
+                        <b>商品名称:</b>好奇 HUGGIES 铂金装 倍柔亲肤纸尿裤M72片
+                    </li>
+                    <li>
+                        <b>品牌:</b>好奇 HUGGIES 铂金装
+                    </li>
+                    <li>
+                        <b>分类:</b>纸尿裤
+                    </li>
+                    <li>
+                        <b>商品条码:</b>
+                    </li>
+                    <li>
+                        <b>尺码:</b>M
+                    </li>
+                    <li>
+                        <b>产地:</b>韩国
+                    </li>
+                    <li>
+                        <b>通用性别:</b>通用
+                    </li>
+                    <li>
+                        <b>片数:</b>72
+                    </li>
+                </ul>
+                <div id="read_more" style="cursor: pointer;">
+                    <a>展开</a>
+                </div>
+                <div class="clearfix datacon">
+                    <div class="dtit">
+                        <img src="{% static 'imag/sp02.gif' %}" alt="商品详情">
+                    </div>
+                    <img src="{% static 'imag/416e73a769d0ffabf2ff8de7655abe8b102757809.jpg' %}" class="lazyload"
+                         width="750px">
+                    <img src="{% static 'imag/204ed5e9156f65f25ff6a27748293c36.jpg' %}" class="lazyload" width="750px">
+                    <img src="{% static 'imag/111af0265470519375bbdc5a76be20f7.jpg' %}" class="lazyload" width="750px">
+                    <img src="{% static 'imag/d26597acc161a5cde08b8515621f7752.jpg' %}" class="lazyload" width="750px">
+                    <img src="{% static 'imag/a741c9b2dff16b3aae194e1831fb1084.jpg' %}" class="lazyload" width="750px">
+                    <img src="{% static 'imag/047f99fdecd521a1c9c74a3f5a0ae746.jpg' %}" class="lazyload" width="750px">
+                    <img src="{% static 'imag/ef22acc87b28309a0c6852d9629351a9.jpg' %}" class="lazyload" width="750px">
+                    <img src="{% static 'imag/1677937aaf37ffbb762dd28dc035f4d0.jpg' %}" class="lazyload" width="750px">
+                    <img src="{% static 'imag/3461f4b82ab4ba21377bcf0138526673.jpg' %}" class="lazyload" width="750px">
+                    <img src="{% static 'imag/a3352f3061dd10f87f3b892fdba8faa4945821872.jpg' %}" class="lazyload"
+                         width="750px">
+                    <div style="clear: both;"></div>
+                </div>
 
- 			</div>
- 			<div class="area clearfix wordofmouth" id="test" style="margin: 10px 0; display: none;">
- 					<div class="pingfen fzl4">
- 						<div class="pingfen_l" id="startone">
- 							<span>商品评分</span>
- 							<div class="star">
- 							<div class="value" style="width: 144px;"></div>
- 							</div>
+            </div>
+            <div class="area clearfix wordofmouth" id="test" style="margin: 10px 0; display: none;">
+                <div class="pingfen fzl4">
+                    <div class="pingfen_l" id="startone">
+                        <span>商品评分</span>
+                        <div class="star">
+                            <div class="value" style="width: 144px;"></div>
+                        </div>
 
- 						</div>
- 						<div class="pingfen_r fz14">
- 						<i>1416</i>
- 						<span>位蜜粉推荐</span>
+                    </div>
+                    <div class="pingfen_r fz14">
+                        <i>1416</i>
+                        <span>位蜜粉推荐</span>
 
- 					</div>
- 					</div>
- 					<div class="koubei_con" id="koubei_con">
- 						<div class="koubei_in yahei">
- 							<div class="top clearfix mb10">
- 								<div class="top_info">
- 									<img src="{% static 'imag/100.jpg' %}" class="photo">
- 									<div class="photo_txt">
- 										<span class="pink">奇迹</span>
- 										<span class="baby">男宝4个月6天</span>
- 										<span class="baby"></span>
- 									</div>
- 								</div>
- 							</div>
- 						</div>
- 					</div>
- 				</div>
- 				<div class="area clearfix">
- 					<div class="dtit">
- 						<img src="{% static 'imag/sp04.gif' %}">
- 					</div>
- 					<ul class="mia_advantage" id="advantageTitle">
- 						<li class="mia_current">
- 							<span class="myys1"></span>
- 						</li>
- 						<li>
- 							<span class="myys2"></span>
- 						</li>
- 						<li>
- 							<span class="myys3"></span>
- 						</li>
- 						<li>
- 							<span class="myys4"></span>
- 						</li>
- 						<li>
- 							<span class="myys5"></span>
- 						</li>
- 						<li>
- 							<span class="myys6"></span>
- 						</li>
- 						<li>
- 							<span class="myys7"></span>
- 						</li>
- 						<li>
- 							<span class="myys8"></span>
- 						</li>
- 					</ul>
- 						<div class="imgblock" id="imgBlock">
- 							<div class="mia_advant1" style="display: block;">
- 								<img src="{% static 'imag/zhengpin01.jpg' %}" alt="蜜芽优势" class="lazyload" width="750" height="300">
- 							</div>
- 						</div>
- 				</div>
- 				<!---->
- 				<div class="area clearfix">
- 					<div class="QA">
- 						<dl>
- 							<dt class="Q">1、我如何购买？</dt>
- 							<dd class="A">每个套餐的价格、包含项目、注意事项会略有不同，请您注意页面描述及套餐温馨提示。
-                        购买付款成功后会收到短信，如果商品没有标“免预约”字样，需要您尽快凭下单后收到的短信优惠码和服务商预约服务。
-                        服务商预约电话在商品详情页均有标注。</dd>
- 						</dl>
- 					</div>
- 				</div>
- 		</div>
- 	</div>
+                    </div>
+                </div>
+                <div class="koubei_con" id="koubei_con">
+                    <div class="koubei_in yahei">
+                        <div class="top clearfix mb10">
+                            <div class="top_info">
+                                <img src="{% static 'imag/100.jpg' %}" class="photo">
+                                <div class="photo_txt">
+                                    <span class="pink">奇迹</span>
+                                    <span class="baby">男宝4个月6天</span>
+                                    <span class="baby"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="area clearfix">
+                <div class="dtit">
+                    <img src="{% static 'imag/sp04.gif' %}">
+                </div>
+                <ul class="mia_advantage" id="advantageTitle">
+                    <li class="mia_current">
+                        <span class="myys1"></span>
+                    </li>
+                    <li>
+                        <span class="myys2"></span>
+                    </li>
+                    <li>
+                        <span class="myys3"></span>
+                    </li>
+                    <li>
+                        <span class="myys4"></span>
+                    </li>
+                    <li>
+                        <span class="myys5"></span>
+                    </li>
+                    <li>
+                        <span class="myys6"></span>
+                    </li>
+                    <li>
+                        <span class="myys7"></span>
+                    </li>
+                    <li>
+                        <span class="myys8"></span>
+                    </li>
+                </ul>
+                <div class="imgblock" id="imgBlock">
+                    <div class="mia_advant1" style="display: block;">
+                        <img src="{% static 'imag/zhengpin01.jpg' %}" alt="蜜芽优势" class="lazyload" width="750"
+                             height="300">
+                    </div>
+                </div>
+            </div>
+            <!---->
+            <div class="area clearfix">
+                <div class="QA">
+                    <dl>
+                        <dt class="Q">1、我如何购买？</dt>
+                        <dd class="A">每个套餐的价格、包含项目、注意事项会略有不同，请您注意页面描述及套餐温馨提示。
+                            购买付款成功后会收到短信，如果商品没有标“免预约”字样，需要您尽快凭下单后收到的短信优惠码和服务商预约服务。
+                            服务商预约电话在商品详情页均有标注。
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!---信赖，无忧-------------------------------------------------->
-    <div class="nfooter">
-        <div class="genuine">
-            <div class="w1100">
-                <a href="#">
-                    <i class="icon-g1"></i>
-                    <b>可信赖</b>
-                    进口母婴特卖
-                </a>
-                <a href="#">
-                    <i class="icon-g2"></i>
-                    <b>无忧</b>
-                    正品保证
-                </a>
-                <a href="#">
-                    <i class="icon-g3"></i>
-                    <b>14天</b>
-                    无理由退货
-                </a>
-                <a href="#">
-                    <i class="icon-g4"></i>
-                    <b>恒温仓</b>
-                    完善的货物仓储
-                </a>
-                <a href="#">
-                    <i class="icon-g5"></i>
-                    <b>24小时</b>
-                    快速发货
-                </a>
-                <a href="#">
-                    <i class="icon-g6"></i>
-                    <b>100万</b>
-                    妈妈口碑信赖
-                </a>
-            </div>
-
+<div class="nfooter">
+    <div class="genuine">
+        <div class="w1100">
+            <a href="#">
+                <i class="icon-g1"></i>
+                <b>可信赖</b>
+                进口母婴特卖
+            </a>
+            <a href="#">
+                <i class="icon-g2"></i>
+                <b>无忧</b>
+                正品保证
+            </a>
+            <a href="#">
+                <i class="icon-g3"></i>
+                <b>14天</b>
+                无理由退货
+            </a>
+            <a href="#">
+                <i class="icon-g4"></i>
+                <b>恒温仓</b>
+                完善的货物仓储
+            </a>
+            <a href="#">
+                <i class="icon-g5"></i>
+                <b>24小时</b>
+                快速发货
+            </a>
+            <a href="#">
+                <i class="icon-g6"></i>
+                <b>100万</b>
+                妈妈口碑信赖
+            </a>
         </div>
-    </div>
 
-    <!----使用帮助---------------------------------------->
-    <div class="nhelp">
-        <div class="w1000">
-            <div class="r" style="margin-right: 72px;">
-                <ul class="EWM">
-                    <li class="strong">关注蜜芽</li>
-                    <li>
-                        <img src="{% static 'img/index_fd_sj.gif' %}" alt="手机蜜芽"/>
-                        <div class="right">
-                            <a href="#">
-                                <img src="{% static 'img/index_fd_wb.gif' %}" alt="官方微博"/>
-                            </a>
-                            <div class="PubBtnHover">
-                                <img src="{% static 'img/index_fd_wx.gif' %}"/>
-                                <img src="{% static 'img/index_fd_wx_more.gif' %}" class="wxmore"/>
-                            </div>
+    </div>
+</div>
+
+<!----使用帮助---------------------------------------->
+<div class="nhelp">
+    <div class="w1000">
+        <div class="r" style="margin-right: 72px;">
+            <ul class="EWM">
+                <li class="strong">关注蜜芽</li>
+                <li>
+                    <img src="{% static 'img/index_fd_sj.gif' %}" alt="手机蜜芽"/>
+                    <div class="right">
+                        <a href="#">
+                            <img src="{% static 'img/index_fd_wb.gif' %}" alt="官方微博"/>
+                        </a>
+                        <div class="PubBtnHover">
+                            <img src="{% static 'img/index_fd_wx.gif' %}"/>
+                            <img src="{% static 'img/index_fd_wx_more.gif' %}" class="wxmore"/>
                         </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="l">
-                <ul>
-                    <li class="strong">使用帮助</li>
-                    <li><a href="#">新手指南</a></li>
-                    <li><a href="#">蜜粉值体系</a></li>
-                    <li><a href="#">蜜豆体系</a></li>
-                    <li><a href="#">正品承诺</a></li>
-                </ul>
-                <ul>
-                    <li class="strong">支付方式</li>
-                    <li><a href="#">支付方式</a></li>
-                    <li><a href="#">支付流程</a></li>
-                    <li><a href="#">跨境进口税</a></li>
-                </ul>
-                <ul>
-                    <li class="strong">配送方式</li>
-                    <li><a href="#">包邮政策</a></li>
-                    <li><a href="#">发货时间</a></li>
-                    <li><a href="#">配送区域</a></li>
-                    <li><a href="#">验货签收</a></li>
-                </ul>
-                <ul>
-                    <li class="strong">售后服务</li>
-                    <li><a href="#">退货政策</a></li>
-                    <li><a href="#">退货流程</a></li>
-                    <li><a href="#">退款方式</a></li>
-                </ul>
-                <ul class="contact" style="width: 200px;">
-                    <li class="strong">联系方式</li>
-                    <li>总裁邮箱 ceo@mia.com</li>
-                    <li>商务合作 bd@mia.com</li>
-                    <li>媒体合作 pr@mia.com</li>
-                    <li>采购中心 cx@mia.com</li>
-                    <li>企业采购 qiye@mia.com</li>
-                </ul>
-            </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="l">
+            <ul>
+                <li class="strong">使用帮助</li>
+                <li><a href="#">新手指南</a></li>
+                <li><a href="#">蜜粉值体系</a></li>
+                <li><a href="#">蜜豆体系</a></li>
+                <li><a href="#">正品承诺</a></li>
+            </ul>
+            <ul>
+                <li class="strong">支付方式</li>
+                <li><a href="#">支付方式</a></li>
+                <li><a href="#">支付流程</a></li>
+                <li><a href="#">跨境进口税</a></li>
+            </ul>
+            <ul>
+                <li class="strong">配送方式</li>
+                <li><a href="#">包邮政策</a></li>
+                <li><a href="#">发货时间</a></li>
+                <li><a href="#">配送区域</a></li>
+                <li><a href="#">验货签收</a></li>
+            </ul>
+            <ul>
+                <li class="strong">售后服务</li>
+                <li><a href="#">退货政策</a></li>
+                <li><a href="#">退货流程</a></li>
+                <li><a href="#">退款方式</a></li>
+            </ul>
+            <ul class="contact" style="width: 200px;">
+                <li class="strong">联系方式</li>
+                <li>总裁邮箱 ceo@mia.com</li>
+                <li>商务合作 bd@mia.com</li>
+                <li>媒体合作 pr@mia.com</li>
+                <li>采购中心 cx@mia.com</li>
+                <li>企业采购 qiye@mia.com</li>
+            </ul>
         </div>
     </div>
+</div>
 
-    <!--====底部=========================================-->
-    <div class="Nlink">
-        <div class="w1000">
-            <p>
-                <a href="#">关于蜜芽</a>|
-                <a href="#">加入蜜芽</a>|
-                <a href="#">商务合作</a>|
-                <a href="#">帮助中心</a>|
-                <a href="#">联系我们</a>|
-                <a href="#">友情链接</a>|
-                <a href="#">触屏版</a>|
-                <a href="#">媒体报道</a>|
-                <a href="#">妈米计划</a>
-            </p>
+<!--====底部=========================================-->
+<div class="Nlink">
+    <div class="w1000">
+        <p>
+            <a href="#">关于蜜芽</a>|
+            <a href="#">加入蜜芽</a>|
+            <a href="#">商务合作</a>|
+            <a href="#">帮助中心</a>|
+            <a href="#">联系我们</a>|
+            <a href="#">友情链接</a>|
+            <a href="#">触屏版</a>|
+            <a href="#">媒体报道</a>|
+            <a href="#">妈米计划</a>
+        </p>
 
-            京公网安备：11010502027270 | 营业执照：91110105585582599307U | 食品经营许可证：SP1101051410296669 | 京ICP证140430号 | 京ICP备14006215号
-            <br/>
-            通过本网站直接或者间接地推销商品或者服务的商业宣传活动均属“广告”
-            <br/>
-            Copyright © 2016 北京花旺在线商贸有限公司 Mia.com 保留一切权利。 客服热线： 400-789-2000
-            <br/>
-            <p class="cert">
-                <a href="#">
-                    <img width="105" border="0" src="{% static 'imag/bluelogo.gif' %}"/>
-                </a>
-                <span style="display:inline-block;position:relative;width:auto;">
+        京公网安备：11010502027270 | 营业执照：91110105585582599307U | 食品经营许可证：SP1101051410296669 | 京ICP证140430号 | 京ICP备14006215号
+        <br/>
+        通过本网站直接或者间接地推销商品或者服务的商业宣传活动均属“广告”
+        <br/>
+        Copyright © 2016 北京花旺在线商贸有限公司 Mia.com 保留一切权利。 客服热线： 400-789-2000
+        <br/>
+        <p class="cert">
+            <a href="#">
+                <img width="105" border="0" src="{% static 'imag/bluelogo.gif' %}"/>
+            </a>
+            <span style="display:inline-block;position:relative;width:auto;">
                     <a style="display: inline-block;" href="#">
                         <img width="80" src="{% static 'imag/cnnic.png' %}"/>
                     </a>
                 </span>
 
-                <a href="#">
-                    <img border="0" src="{% static 'imag/chengxin.jpg' %}"/>
-                </a>
-                <a href="#">
-                    <img width="105" src="{% static 'imag/alipay.jpg' %}"/>
-                </a>
-            </p>
-        </div>
+            <a href="#">
+                <img border="0" src="{% static 'imag/chengxin.jpg' %}"/>
+            </a>
+            <a href="#">
+                <img width="105" src="{% static 'imag/alipay.jpg' %}"/>
+            </a>
+        </p>
     </div>
+</div>
 
 
-    <!----二维验证码>>>>左侧-------------------------------------------->
-    <div class="ewm">
-        <img src="{% static 'img/ewm.png' %}"/>
-    </div>
+<!----二维验证码>>>>左侧-------------------------------------------->
+<div class="ewm">
+    <img src="{% static 'img/ewm.png' %}"/>
+</div>
 
-    <!-------------------右侧------------------------------------------->
-    <div id="rightlist">
+<!-------------------右侧------------------------------------------->
+<div id="rightlist">
     <div id="rightReturn">
         <ul>
             <li class="lione">
