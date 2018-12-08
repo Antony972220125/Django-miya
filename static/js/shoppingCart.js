@@ -65,7 +65,7 @@ $(function(){
 				o_pF.addClass("lastPic");
 				
 				//创建a 添加删除按钮
-				var o_pFi=$("<a href='##'>"+"删除"+"</a>");
+				var o_pFi=$("<a href='#'>"+"删除"+"</a>");
 				o_pFi.addClass("dela");
 				
 				//创建的节点，放入页面中

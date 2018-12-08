@@ -4,7 +4,7 @@ input{border: 0;font-size: 14px;}
 .register{margin:0 auto;width: 965px;height: 502px;padding-top: 75px;margin-top: 20px;background:url(../images/dengru.jpg) left 112px no-repeat;}
 .register .zcLogo{width: 965px;height: 100px;}
 .register .zcLogo img{width: 210px;height: 100px;}
-.register .zhuce{border: 1px solid #FFE0EF;height: 400px; left: 830px; top: 92px;width: 304px;padding: 0 20px 20px;position: absolute;}
+.register .zhuce{border: 1px solid #FFE0EF;height: 300px; left: 830px; top: 92px;width: 304px;padding: 0 20px 20px;position: absolute;}
 .register .zhuce .zhuceTop{color: #E31256;line-height: 60px;margin-bottom: 13px;width: 304px;height: 60px;}
 .register .zhuce .zhuceTop .zctLeft{font-size: 20px;color: #f450a2;float: left;width: 80px;height: 60px;display: inline-block;}
 .register .zhuce .zhuceTop .zctRight{font-size: 12px;float: right;height: 60px;line-height:60px;display: inline-block;}
@@ -31,7 +31,7 @@ input{border: 0;font-size: 14px;}
 .form .duanxi{width: 304px;height: 39px;margin-top: 10px;margin-bottom: 26px;}
 .form .duanxi .xx{padding-left: 10px;width: 136px;height: 37px;border: 1px solid #CFCFCF;}
 .form .duanxi .get{font-size:12px;border: 1px solid #d9d9d9;text-decoration: none;cursor: pointer;padding: 0 8px;display: inline-block;line-height: 37px;height: 37px;font-weight: 700;color: #666;text-align: center;width: 128px;}
-.form .tiqiao{margin-top: 15px;}
+.form .tiqiao{margin-top: 100px;}
 .form .tiqiao .go{text-align:center;border-radius: 2px;display: inline-block;color: #FFF;
 background-color: #F450A2;padding: 4px 14px 7px;width: 255px; height: 30px;line-height: 30px;font-size: 20px;}
 

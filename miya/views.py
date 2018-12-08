@@ -6,17 +6,29 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
-from miya.models import User, Wheel
+from miya.models import User, Wheel, Goods, TypeGoods, SingleGoods, SingleGoods2
 
 
 def index(request):
+    wheels = Wheel.objects.all()
+    goods = Goods.objects.all()
+    typegoods = TypeGoods.objects.all()
+    data = {
+        'wheels': wheels,
+        'goods': goods,
+        'typegoods': typegoods,
+    }
     token = request.session.get('token')
     if token:
         user = User.objects.get(token=token)
-        return render(request, 'index.html', context={'username': user.username})
+        return render(request, 'index.html', context={
+            'username': user.username,
+            'wheels': wheels,
+            'goods': goods,
+            'typegoods': typegoods,
+        })
     else:
-        wheels = Wheel.objects.all()
-        return render(request, 'index.html', context={'wheels': wheels})
+        return render(request, 'index.html', context=data)
 
 
 def genereate_pd(password):
@@ -80,3 +92,15 @@ def login(request):
 
 def cart(request):
     return render(request, 'cart.html')
+
+
+def GoodsShow(request):
+    singlegoods = SingleGoods.objects.all()
+    singlegoods2 = SingleGoods2.objects.all()
+
+    data = {
+        'singlegoods': singlegoods,
+        'singlegoods2': singlegoods2,
+    }
+
+    return render(request, 'GoodsShow.html', context=data)

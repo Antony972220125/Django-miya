@@ -1,16 +1,18 @@
 {% load static %}
 <!DOCTYPE html>
+<html lang="en">
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>蜜芽|首页</title>
-    <link rel="stylesheet" href="{% static 'css/xiangiqng.css' %}"/>
+    <title>商品详情</title>
+   <link rel="stylesheet" href="{% static 'css/xiangiqng.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
     <script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/xiangqing.js' %}"></script>
 </head>
 <body>
 <div class="bg">
@@ -1336,294 +1338,432 @@
         </div>
     </div>
 </div>
-<!----------轮播图--------------------------------->
-<div id="bg4">
-     <div class="swiper-container" id="topSwiper">
-            <div class="swiper-wrapper">
-                {% for wheel in wheels %}
-                    <div class="swiper-slide">
-                        <img src="{{ wheel.img }}" alt="">
-                    </div>
-                {% endfor %}
-            </div>
-            <!-- Add Pagination -->
-         <div class="swiper-pagination"></div>
-     </div>
+
+
+<!--商品目录-->
+<div class="catalogue">
+    <a href="{% url 'ma:index' %}" class="aaa">蜜芽首页</a>
+    &gt;
+    <a href="#">三美婴 Sunveno 宝宝双肩腰凳多功能背带透气婴儿坐凳 枣红</a>
 </div>
-<!-----热卖品牌------------------------------------------------>
-<div class="w3000">
-    <div class="index-brand">
-        <h3>热卖品牌</h3>
-        <div class="brands">
-            <a href="#">
-                <img src="{% static 'img/10_pinp.jpg' %}">
-            </a>
-            <a href="#">
-                <img src="{% static 'img/11_pinp.jpg' %}">
-            </a>
-            <a href="#">
-                <img src="{% static 'img/12_pinp.jpg' %}">
-            </a>
-            <a href="#">
-                <img src="{% static 'img/13_pinp.jpg' %}">
-            </a>
-            <a href="#">
-                <img src="{% static 'img/14_pinp.jpg' %}">
-            </a>
-            <a href="#">
-                <img src="{% static 'img/3_pinp.jpg' %}">
-            </a>
+
+<!--商品详情介绍-->
+<div class="showBox">
+    <div class="showbox-Left">
+        <div class="showboxleft-Top" id="showboxleft-Top">
+
+            <div id="smallArea" class="smallPic"
+                 style="position: absolute;width:200px;height: 201px;top:0;left: 0;display: none;">
+            </div>
+
+        </div>
+        <div class="big" id="bigArea" style="display: none;">
+
+        </div>
+        <div class="showboxleft-Bot" id="showboxleft-Bot">
+
         </div>
     </div>
-    <i></i>
-</div>
-<!------新人专区，福利独享---------------------------------------->
-<div class="newper">
-    <a href="#">
-        <img src="{% static 'img/newper.jpg' %}"/>
-    </a>
-</div>
+    <div class="showbox-Right">
+        <p class="pone">
 
-<!-----为你推荐，千万妈妈精明之选----------------------------------->
-<div class="mod-qhh">
-	<h3>
-		为你推荐
-		<span>千万妈妈 精明之选</span>
-	</h3>
-     {% for good in goods %}
-	        <div class="layout">
-                <a class="ahref" href="{% url 'ma:GoodsShow' %}" title="迪士尼宝宝 Disney baby 新生儿衣服婴儿包屁衣宝宝长袖纯棉米白">
-                    <div class="gds-img">
-                        <img src="{{ good.img }}">
-                    </div>
-                    <p class="tite">{{ good.tite}}</p>
-                    <span class="news">￥{{ good.news }}</span>
-                    <span class="old">￥{{ good.old }}</span>
-                    <p class="buy">{{ good.huy }}</p>
-                    <span class="btn">{{ good.btn }}</span>
-                </a>
-         </div>
-        {% endfor %}
+        </p>
 
-</div>
+        <div class="price">
 
+					<span class="pbox_price">
 
-<!-----今日特卖--------------------------------------------------------->
-<div class="index-outlets">
-    <p class="mod-h4">
-        今日特卖
-        <span>每天10点上新</span>
-    </p>
-    {% for typegood in typegoods %}
-         <div class="layout">
-             <div class="block">
-                <a class="beiban" href="#" title="十一妆好再出门">
-                    <div class="block">
-                        <img src="{{ typegood.img1 }}">
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                    </div>
-                </a>
-            <div class="rank">
-                <a href="#">
-                    <div class="l">
-                        <img class="lazyload" src="{{ typegood.img2 }}">
-                        <i class="r1"></i>
-                    </div>
-                    <p class="titt">{{ typegood.titt1 }}</p>
-                    <span class="new"> ￥<em>{{ typegood.newss1 }}元</em></span>
-                    <span class="old">￥<em>{{ typegood.old1 }}元</em></span>
-                </a>
+                    </span>
+            <span class="pbox_market">
 
-                <a href="#">
+                    </span>
+            <div class="youhui">
 
-                    <div class="l">
-                        <img class="lazyload" src="{{ typegood.img3 }}">
-                        <i class="r2"></i>
-                    </div>
-                    <p class="titt">{{ typegood.titt2 }}</p>
-                    <span class="new"> ￥<em>{{ typegood.newss2 }}元</em></span>
-                    <span class="old">￥<em>{{ typegood.old2 }}元</em></span>
-                </a>
+                <dt class="youhuiRight" style="float:left;">
+                    <a href="##">
+                        <div class="markwarp">
 
-                <a href="#">
+                        </div>
+                    </a>
+                </dt>
+            </div>
+        </div>
+        <!--小图选择-->
+        <div class="select">
 
-                    <div class="l">
-                        <img class="lazyload" src="{{ typegood.img4 }}">
-                        <i class="r3"></i>
-                    </div>
-                    <p class="titt">{{ typegood.titt3 }}</p>
-                    <span class="new"> ￥<em>{{ typegood.newss3 }}元</em></span>
-                    <span class="old">￥<em>{{ typegood.old3 }}元</em></span>
+            <div class="selectRight">
+                <ul id="selectrightUl">
+
+                </ul>
+            </div>
+        </div>
+        <div class="shuliang">
+            <span class="numname">数量</span>
+            <p class="addnum">
+                <span id="subtract" class="jian"></span>
+                <input type="text" id="count" class="numbian" value="1"
+                       style="text-align: center;width: 28px;background-color: #fff;float: left;height: 28px;line-height: 28px;font-style: normal;font-size: 12px;">
+                <span id="add" class="jia"></span>
+            </p>
+        </div>
+        <div class="pingfen">
+            <div class="review" style="margin-right:15px;">
+                <span class="wenzi">评分</span>
+                <div class="star2">
+                    <div class="value2" style="width:78.4px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="carBox">
+            <div class="aBot" id="aBot">
+                <a href="##" class="join" id="join">加入购物车</a>
+            </div>
+            <div class="collect" id="collect">
+                <a href="##" class="attendSubmit" id="attendSubmit">
+                    <i class="love"></i>
+                    <span>收藏</span>
                 </a>
             </div>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
+        </div>
+        <p class="coding">
+            <span class="spanone">编码：</span>
+            <span class="spantwo">1407023</span>
+        </p>
+        <p class="shipping">此商品由三美婴出行旗舰店进行发货</p>
+        <div class="baoyou">
+            <ul>
+                <li>满88包邮</li>
+                <li>商家发货</li>
+                <li>支持14天无理由退货</li>
+            </ul>
         </div>
     </div>
+</div>
 
+
+<!--proppro----------------------------------------------------------->
+<div class="poppro">
+    {% for foo in singlegoods2 %}
+        <div class="cell">
+            <a href="#" title="韩国进口学步鞋机能鞋糖果 绿">
+                <img src="{{ foo.img }}" alt="韩国进口学步鞋机能鞋糖果 绿" width="217" class="img">
+            </a>
+            <p class="p1"><a href="#">{{ foo.title }}</a></p>
+            <p class="p2">￥{{ foo.price }}</p>
+        </div>
     {% endfor %}
 </div>
 
+<!----introduction------------------------------------------------------------>
+<div class="introduction">
+    <div class="right l" id="seeing">
+        <div class="pubtittle">看了又看</div>
+            <div class="pubcon cp">
+            {% for singlegood in singlegoods %}
+                 <div class="block">
+                <a href="#">
+                    <img src="{{ singlegood.img }}" alt="韩国进口时尚宝宝鞋动物豹纹系列 花豹" width="80" height="80">
+                </a>
+                <p class="tittt">
+                    <a href="#" title="韩国进口时尚宝宝鞋动物豹纹系列 花豹">{{ singlegood.title }}</a>
+
+                </p>
+                <span class="pink">￥{{ singlegood.price }}</span>
+                <br>
+                <span class="gray"> </span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="left l" id="hash_myq">
+ 		<div class="modulefixed" style="">
+ 			<div class="modfixed">
+ 				<ul class="title yahei">
+ 					<li class="current">商品详情</li>
+ 					<li>蜜芽圈(1475)</li>
+ 					<li>蜜芽优势</li>
+ 					<li>问题咨询</li>
+ 				</ul>
+ 			</div>
+ 		</div>
+ 		<div class="p10">
+ 			<div class="area">
+ 				<ul class="clearfix" id="wrap_con" style="height: 98px;">
+ 					<li>
+ 						<b>商品名称:</b>好奇 HUGGIES 铂金装 倍柔亲肤纸尿裤M72片
+ 					</li>
+ 					<li>
+ 						<b>品牌:</b>好奇 HUGGIES 铂金装
+ 					</li>
+ 					<li>
+ 						<b>分类:</b>纸尿裤
+ 					</li>
+ 					<li>
+ 						<b>商品条码:</b>
+ 					</li>
+ 					<li>
+ 						<b>尺码:</b>M
+ 					</li>
+ 					<li>
+ 						<b>产地:</b>韩国
+ 					</li>
+ 					<li>
+ 						<b>通用性别:</b>通用
+ 					</li>
+ 					<li>
+ 						<b>片数:</b>72
+ 					</li>
+ 				</ul>
+ 				<div id="read_more" style="cursor: pointer;">
+ 					<a>展开</a>
+ 				</div>
+ 				<div class="clearfix datacon">
+ 					<div class="dtit">
+ 						<img src="{% static 'imag/sp02.gif' %}" alt="商品详情">
+ 					</div>
+ 					<img src="{% static 'imag/416e73a769d0ffabf2ff8de7655abe8b102757809.jpg' %}" class="lazyload" width="750px">
+ 					<img src="{% static 'imag/204ed5e9156f65f25ff6a27748293c36.jpg' %}" class="lazyload" width="750px">
+ 					<img src="{% static 'imag/111af0265470519375bbdc5a76be20f7.jpg' %}" class="lazyload" width="750px">
+ 					<img src="{% static 'imag/d26597acc161a5cde08b8515621f7752.jpg' %}" class="lazyload" width="750px">
+ 					<img src="{% static 'imag/a741c9b2dff16b3aae194e1831fb1084.jpg' %}" class="lazyload" width="750px">
+ 					<img src="{% static 'imag/047f99fdecd521a1c9c74a3f5a0ae746.jpg' %}" class="lazyload" width="750px">
+ 					<img src="{% static 'imag/ef22acc87b28309a0c6852d9629351a9.jpg' %}" class="lazyload" width="750px">
+ 					<img src="{% static 'imag/1677937aaf37ffbb762dd28dc035f4d0.jpg' %}" class="lazyload" width="750px">
+ 					<img src="{% static 'imag/3461f4b82ab4ba21377bcf0138526673.jpg' %}" class="lazyload" width="750px">
+ 					<img src="{% static 'imag/a3352f3061dd10f87f3b892fdba8faa4945821872.jpg' %}" class="lazyload" width="750px">
+ 					<div style="clear: both;"></div>
+ 				</div>
+
+ 			</div>
+ 			<div class="area clearfix wordofmouth" id="test" style="margin: 10px 0; display: none;">
+ 					<div class="pingfen fzl4">
+ 						<div class="pingfen_l" id="startone">
+ 							<span>商品评分</span>
+ 							<div class="star">
+ 							<div class="value" style="width: 144px;"></div>
+ 							</div>
+
+ 						</div>
+ 						<div class="pingfen_r fz14">
+ 						<i>1416</i>
+ 						<span>位蜜粉推荐</span>
+
+ 					</div>
+ 					</div>
+ 					<div class="koubei_con" id="koubei_con">
+ 						<div class="koubei_in yahei">
+ 							<div class="top clearfix mb10">
+ 								<div class="top_info">
+ 									<img src="{% static 'imag/100.jpg' %}" class="photo">
+ 									<div class="photo_txt">
+ 										<span class="pink">奇迹</span>
+ 										<span class="baby">男宝4个月6天</span>
+ 										<span class="baby"></span>
+ 									</div>
+ 								</div>
+ 							</div>
+ 						</div>
+ 					</div>
+ 				</div>
+ 				<div class="area clearfix">
+ 					<div class="dtit">
+ 						<img src="{% static 'imag/sp04.gif' %}">
+ 					</div>
+ 					<ul class="mia_advantage" id="advantageTitle">
+ 						<li class="mia_current">
+ 							<span class="myys1"></span>
+ 						</li>
+ 						<li>
+ 							<span class="myys2"></span>
+ 						</li>
+ 						<li>
+ 							<span class="myys3"></span>
+ 						</li>
+ 						<li>
+ 							<span class="myys4"></span>
+ 						</li>
+ 						<li>
+ 							<span class="myys5"></span>
+ 						</li>
+ 						<li>
+ 							<span class="myys6"></span>
+ 						</li>
+ 						<li>
+ 							<span class="myys7"></span>
+ 						</li>
+ 						<li>
+ 							<span class="myys8"></span>
+ 						</li>
+ 					</ul>
+ 						<div class="imgblock" id="imgBlock">
+ 							<div class="mia_advant1" style="display: block;">
+ 								<img src="{% static 'imag/zhengpin01.jpg' %}" alt="蜜芽优势" class="lazyload" width="750" height="300">
+ 							</div>
+ 						</div>
+ 				</div>
+ 				<!---->
+ 				<div class="area clearfix">
+ 					<div class="QA">
+ 						<dl>
+ 							<dt class="Q">1、我如何购买？</dt>
+ 							<dd class="A">每个套餐的价格、包含项目、注意事项会略有不同，请您注意页面描述及套餐温馨提示。
+                        购买付款成功后会收到短信，如果商品没有标“免预约”字样，需要您尽快凭下单后收到的短信优惠码和服务商预约服务。
+                        服务商预约电话在商品详情页均有标注。</dd>
+ 						</dl>
+ 					</div>
+ 				</div>
+ 		</div>
+ 	</div>
+</div>
+
 <!---信赖，无忧-------------------------------------------------->
-<div class="nfooter">
-    <div class="genuine">
-        <div class="w1100">
-            <a href="#">
-                <i class="icon-g1"></i>
-                <b>可信赖</b>
-                进口母婴特卖
-            </a>
-            <a href="#">
-                <i class="icon-g2"></i>
-                <b>无忧</b>
-                正品保证
-            </a>
-            <a href="#">
-                <i class="icon-g3"></i>
-                <b>14天</b>
-                无理由退货
-            </a>
-            <a href="#">
-                <i class="icon-g4"></i>
-                <b>恒温仓</b>
-                完善的货物仓储
-            </a>
-            <a href="#">
-                <i class="icon-g5"></i>
-                <b>24小时</b>
-                快速发货
-            </a>
-            <a href="#">
-                <i class="icon-g6"></i>
-                <b>100万</b>
-                妈妈口碑信赖
-            </a>
+    <div class="nfooter">
+        <div class="genuine">
+            <div class="w1100">
+                <a href="#">
+                    <i class="icon-g1"></i>
+                    <b>可信赖</b>
+                    进口母婴特卖
+                </a>
+                <a href="#">
+                    <i class="icon-g2"></i>
+                    <b>无忧</b>
+                    正品保证
+                </a>
+                <a href="#">
+                    <i class="icon-g3"></i>
+                    <b>14天</b>
+                    无理由退货
+                </a>
+                <a href="#">
+                    <i class="icon-g4"></i>
+                    <b>恒温仓</b>
+                    完善的货物仓储
+                </a>
+                <a href="#">
+                    <i class="icon-g5"></i>
+                    <b>24小时</b>
+                    快速发货
+                </a>
+                <a href="#">
+                    <i class="icon-g6"></i>
+                    <b>100万</b>
+                    妈妈口碑信赖
+                </a>
+            </div>
+
         </div>
-
     </div>
-</div>
 
-<!----使用帮助---------------------------------------->
-<div class="nhelp">
-    <div class="w1000">
-        <div class="r" style="margin-right: 72px;">
-            <ul class="EWM">
-                <li class="strong">关注蜜芽</li>
-                <li>
-                    <img src="{% static 'img/index_fd_sj.gif' %}" alt="手机蜜芽"/>
-                    <div class="right">
-                        <a href="#">
-                            <img src="{% static 'img/index_fd_wb.gif' %}" alt="官方微博"/>
-                        </a>
-                        <div class="PubBtnHover">
-                            <img src="{% static 'img/index_fd_wx.gif' %}"/>
-                            <img src="{% static 'img/index_fd_wx_more.gif' %}" class="wxmore"/>
+    <!----使用帮助---------------------------------------->
+    <div class="nhelp">
+        <div class="w1000">
+            <div class="r" style="margin-right: 72px;">
+                <ul class="EWM">
+                    <li class="strong">关注蜜芽</li>
+                    <li>
+                        <img src="{% static 'img/index_fd_sj.gif' %}" alt="手机蜜芽"/>
+                        <div class="right">
+                            <a href="#">
+                                <img src="{% static 'img/index_fd_wb.gif' %}" alt="官方微博"/>
+                            </a>
+                            <div class="PubBtnHover">
+                                <img src="{% static 'img/index_fd_wx.gif' %}"/>
+                                <img src="{% static 'img/index_fd_wx_more.gif' %}" class="wxmore"/>
+                            </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="l">
-            <ul>
-                <li class="strong">使用帮助</li>
-                <li><a href="#">新手指南</a></li>
-                <li><a href="#">蜜粉值体系</a></li>
-                <li><a href="#">蜜豆体系</a></li>
-                <li><a href="#">正品承诺</a></li>
-            </ul>
-            <ul>
-                <li class="strong">支付方式</li>
-                <li><a href="#">支付方式</a></li>
-                <li><a href="#">支付流程</a></li>
-                <li><a href="#">跨境进口税</a></li>
-            </ul>
-            <ul>
-                <li class="strong">配送方式</li>
-                <li><a href="#">包邮政策</a></li>
-                <li><a href="#">发货时间</a></li>
-                <li><a href="#">配送区域</a></li>
-                <li><a href="#">验货签收</a></li>
-            </ul>
-            <ul>
-                <li class="strong">售后服务</li>
-                <li><a href="#">退货政策</a></li>
-                <li><a href="#">退货流程</a></li>
-                <li><a href="#">退款方式</a></li>
-            </ul>
-            <ul class="contact" style="width: 200px;">
-                <li class="strong">联系方式</li>
-                <li>总裁邮箱 ceo@mia.com</li>
-                <li>商务合作 bd@mia.com</li>
-                <li>媒体合作 pr@mia.com</li>
-                <li>采购中心 cx@mia.com</li>
-                <li>企业采购 qiye@mia.com</li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="l">
+                <ul>
+                    <li class="strong">使用帮助</li>
+                    <li><a href="#">新手指南</a></li>
+                    <li><a href="#">蜜粉值体系</a></li>
+                    <li><a href="#">蜜豆体系</a></li>
+                    <li><a href="#">正品承诺</a></li>
+                </ul>
+                <ul>
+                    <li class="strong">支付方式</li>
+                    <li><a href="#">支付方式</a></li>
+                    <li><a href="#">支付流程</a></li>
+                    <li><a href="#">跨境进口税</a></li>
+                </ul>
+                <ul>
+                    <li class="strong">配送方式</li>
+                    <li><a href="#">包邮政策</a></li>
+                    <li><a href="#">发货时间</a></li>
+                    <li><a href="#">配送区域</a></li>
+                    <li><a href="#">验货签收</a></li>
+                </ul>
+                <ul>
+                    <li class="strong">售后服务</li>
+                    <li><a href="#">退货政策</a></li>
+                    <li><a href="#">退货流程</a></li>
+                    <li><a href="#">退款方式</a></li>
+                </ul>
+                <ul class="contact" style="width: 200px;">
+                    <li class="strong">联系方式</li>
+                    <li>总裁邮箱 ceo@mia.com</li>
+                    <li>商务合作 bd@mia.com</li>
+                    <li>媒体合作 pr@mia.com</li>
+                    <li>采购中心 cx@mia.com</li>
+                    <li>企业采购 qiye@mia.com</li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 
-<!--====底部=========================================-->
-<div class="Nlink">
-    <div class="w1000">
-        <p>
-            <a href="#">关于蜜芽</a>|
-            <a href="#">加入蜜芽</a>|
-            <a href="#">商务合作</a>|
-            <a href="#">帮助中心</a>|
-            <a href="#">联系我们</a>|
-            <a href="#">友情链接</a>|
-            <a href="#">触屏版</a>|
-            <a href="#">媒体报道</a>|
-            <a href="#">妈米计划</a>
-        </p>
+    <!--====底部=========================================-->
+    <div class="Nlink">
+        <div class="w1000">
+            <p>
+                <a href="#">关于蜜芽</a>|
+                <a href="#">加入蜜芽</a>|
+                <a href="#">商务合作</a>|
+                <a href="#">帮助中心</a>|
+                <a href="#">联系我们</a>|
+                <a href="#">友情链接</a>|
+                <a href="#">触屏版</a>|
+                <a href="#">媒体报道</a>|
+                <a href="#">妈米计划</a>
+            </p>
 
-        京公网安备：11010502027270 | 营业执照：91110105585582599307U | 食品经营许可证：SP1101051410296669 | 京ICP证140430号 | 京ICP备14006215号
-        <br/>
-        通过本网站直接或者间接地推销商品或者服务的商业宣传活动均属“广告”
-        <br/>
-        Copyright © 2016 北京花旺在线商贸有限公司 Mia.com 保留一切权利。 客服热线： 400-789-2000
-        <br/>
-        <p class="cert">
-            <a href="#">
-                <img width="105" border="0" src="{% static 'imag/bluelogo.gif' %}"/>
-            </a>
-            <span style="display:inline-block;position:relative;width:auto;">
-        		<a style="display: inline-block;" href="#">
-        			<img width="80" src="{% static 'imag/cnnic.png' %}"/>
-        		</a>
-        	</span>
+            京公网安备：11010502027270 | 营业执照：91110105585582599307U | 食品经营许可证：SP1101051410296669 | 京ICP证140430号 | 京ICP备14006215号
+            <br/>
+            通过本网站直接或者间接地推销商品或者服务的商业宣传活动均属“广告”
+            <br/>
+            Copyright © 2016 北京花旺在线商贸有限公司 Mia.com 保留一切权利。 客服热线： 400-789-2000
+            <br/>
+            <p class="cert">
+                <a href="#">
+                    <img width="105" border="0" src="{% static 'imag/bluelogo.gif' %}"/>
+                </a>
+                <span style="display:inline-block;position:relative;width:auto;">
+                    <a style="display: inline-block;" href="#">
+                        <img width="80" src="{% static 'imag/cnnic.png' %}"/>
+                    </a>
+                </span>
 
-            <a href="#">
-                <img border="0" src="{% static 'imag/chengxin.jpg' %}"/>
-            </a>
-            <a href="#">
-                <img width="105" src="{% static 'imag/alipay.jpg' %}"/>
-            </a>
-        </p>
+                <a href="#">
+                    <img border="0" src="{% static 'imag/chengxin.jpg' %}"/>
+                </a>
+                <a href="#">
+                    <img width="105" src="{% static 'imag/alipay.jpg' %}"/>
+                </a>
+            </p>
+        </div>
     </div>
-</div>
 
 
-<!----二维验证码>>>>左侧-------------------------------------------->
-<div class="ewm">
-    <img src="{% static 'img/ewm.png' %}"/>
-</div>
+    <!----二维验证码>>>>左侧-------------------------------------------->
+    <div class="ewm">
+        <img src="{% static 'img/ewm.png' %}"/>
+    </div>
 
-<!-------------------右侧------------------------------------------->
-<div id="rightlist">
+    <!-------------------右侧------------------------------------------->
+    <div id="rightlist">
     <div id="rightReturn">
         <ul>
             <li class="lione">
