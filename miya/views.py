@@ -43,6 +43,7 @@ def generate_token():
     md5.update(token.encode('utf-8'))
     return md5.hexdigest()
 
+
 def register(request):
     if request.method == 'GET':
         return render(request, 'register.html')
@@ -52,7 +53,6 @@ def register(request):
         password = request.POST.get('password')
         u_password = request.POST.get('u_password')
         if password == u_password:
-            print(username, tel, password)
 
             user = User()
             user.username = username
@@ -108,13 +108,4 @@ def GoodsShow(request):
         'singlegoods2': singlegoods2,
     }
 
-    token = request.session.get('token')
-    if token:
-        user = User.objects.get(token=token)
-        return render(request, 'GoodsShow.html', context={
-            'username': user.username,
-            'singlegoods': singlegoods,
-            'singlegoods2': singlegoods2,
-        })
-    else:
-        return render(request, 'GoodsShow.html', context=data)
+    return render(request, 'GoodsShow.html', context=data)
