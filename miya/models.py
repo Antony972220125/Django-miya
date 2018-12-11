@@ -6,7 +6,8 @@ from django.db import models
 class User(models.Model):
     username = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
-    tel = models.CharField(max_length=20)
+    img = models.CharField(max_length=100, default='title.ico')
+    tel = models.CharField(max_length=20, unique=True)
     token = models.CharField(max_length=256, default='')
 
 
@@ -53,3 +54,26 @@ class SingleGoods2(models.Model):
     img = models.CharField(max_length=100)
     title = models.CharField(max_length=256)
     price = models.DecimalField(max_digits=7, decimal_places=2)
+
+
+class GoodsDesc(models.Model):
+    goodsid = models.IntegerField()
+    images = models.CharField(max_length=100)
+    tite = models.CharField(max_length=256)
+    title = models.CharField(max_length=256)
+    ptwo = models.CharField(max_length=256)
+    yahei = models.CharField(max_length=100)
+    item_price = models.DecimalField(max_digits=7, decimal_places=2)
+    old_price = models.DecimalField(max_digits=7, decimal_places=2)
+    discount = models.CharField(max_length=100)
+    reduction = models.CharField(max_length=50)
+    wushi = models.CharField(max_length=100)
+    selects = models.CharField(max_length=50)
+    imag = models.CharField(max_length=100)
+    numname = models.CharField(max_length=20)
+
+
+
+
+
+

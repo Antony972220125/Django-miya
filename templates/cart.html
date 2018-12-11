@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <title>蜜芽，中国领先的进口母婴限时特卖商城</title>
     <link rel="stylesheet" href="{% static 'css/xiangiqng.css' %}"/>
-    <link rel="stylesheet" href="{% static 'css/shoppingCart.css' %}">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/shoppingCart.css' %}">
     <script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
@@ -26,8 +27,10 @@
             <ul>
                 <li>
                     <a href="{% url 'ma:login' %}" class="lis">
-                    {% if username %}
-                          用户: {{ username }}
+                    {% if img %}
+                        {{ username }}
+                        <img src="/static/img/{{ img }}">
+                        <a href="{% url 'ma:logout' %}">退出登录</a>
                     {% else %}
                         登录
                     {% endif %}

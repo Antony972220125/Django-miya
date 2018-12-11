@@ -58,13 +58,13 @@ $(function () {
 	$("#carbox").hover(function () {
 		$("#shopingcar").css({display: "block"});
 		$("#cara").css({"height": "35", border: " 1px solid #fa4b9b", "border-bottom": "1px solid white"})
-		$("#spancar").find("img").attr("src", "static/images/shopcar.jpg");
+		$("#spancar").find("img").attr("src", "/static/images/shopcar.jpg");
 		$("#spancar").css({"background": "white"});
 		$("#cara").find("strong").css("display", "block");
 	}, function () {
 		$("#shopingcar").css({display: "none"});
 		$("#cara").css({"height": "32", border: " 1px solid #e5e5e5"});
-		$("#spancar").find("img").attr("src", "static/images/shoping.jpg");
+		$("#spancar").find("img").attr("src", "/static/images/shoping.jpg");
 		$("#spancar").css({"background": "#ff3893"});
 		$("#cara").find("strong").css("display", "none");
 	});

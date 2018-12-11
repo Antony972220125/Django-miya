@@ -253,7 +253,20 @@ $(function(){
 	
 					else {
 						alert("注册成功请登录");
-						$(".go").attr("href","login.html");
+						$("#come").click(function () {
+							var isRegister = true
+
+							$('input').each(function () {
+								if ($(this).val() == '')
+								{
+									isRegister = false
+								}
+							})
+							if (isRegister)
+							{
+								$('#register-view').submit()
+							}
+						})
 					}
 				}
 				else{
@@ -261,17 +274,17 @@ $(function(){
 				}
 			});
 			
-			
-			
+
+
 			//==注册页面延时器==============================================
-			var timer =null;
-			timer = setTimeout(function(){
-				$(".bjtp").find("img").attr("src","imag/df528a2a915203fefa34035f08343ebb884536665.png");
-			},200)
-			
-			
-	
-			
-			
+			// var timer =null;
+			// timer = setTimeout(function(){
+			// 	$(".bjtp").find("img").attr("src","imag/df528a2a915203fefa34035f08343ebb884536665.png");
+			// },200)
+
+
+
+
+
 			
 			})

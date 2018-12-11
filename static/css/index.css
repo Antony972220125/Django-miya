@@ -50,23 +50,23 @@ em,i{
 .header .headerRight{
 	display: inline-block;
 	float: right;
-	width: 500px;
+	width: 550px;
 	height: 29px;
 	line-height: 29px;
 	color: #666;
 }
 .headerRight #addname{
 	float: left;
-	margin-left: 190px;
+	margin-left: 140px;
 
 }
 .headerRight .nihao{
 	float: left;
-	margin-left: 190px;
+	margin-left: 100px;
 }
 .headerRight ul{
 	float: left;
-	margin-left: 20px;
+	margin-left: 40px;
 }
 .headerRight ul li{
 	float: left;

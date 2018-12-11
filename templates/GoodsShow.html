@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
     <script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/xiangqing.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/xiangqing.js' %}"></script>
 </head>
 <body>
 <div class="bg">
@@ -27,8 +27,10 @@
             <ul>
                 <li>
                     <a href="{% url 'ma:login' %}" class="lis">
-                        {% if username %}
-                            用户: {{ username }}
+                        {% if img %}
+                            {{ username }}
+                            <img src="/static/img/{{ img }}">
+                            <a href="{% url 'ma:logout' %}">退出登录</a>
                         {% else %}
                             登录
                         {% endif %}
@@ -1344,7 +1346,10 @@
 <div class="catalogue">
     <a href="{% url 'ma:index' %}" class="aaa">蜜芽首页</a>
     &gt;
-    <a href="#">三美婴 Sunveno 宝宝双肩腰凳多功能背带透气婴儿坐凳 枣红</a>
+    <a href="#">
+        {{ goodsdesc.tite }}
+        {{ goodsdesc.title }}
+    </a>
 </div>
 
 <!--商品详情介绍-->
@@ -1355,50 +1360,51 @@
             <div id="smallArea" class="smallPic"
                  style="position: absolute;width:200px;height: 201px;top:0;left: 0;display: none;">
             </div>
-
+            <img src="{{ goodsdesc.images }}" id="smallImg" class="img">
         </div>
         <div class="big" id="bigArea" style="display: none;">
 
         </div>
         <div class="showboxleft-Bot" id="showboxleft-Bot">
 
+            <img src="{{ goodsdesc.images }}" style="border-color: rgb(244, 244, 244);">
+            <img src="{{ goodsdesc.images }}" style="border-color: rgb(250, 75, 155);">
         </div>
     </div>
     <div class="showbox-Right">
         <p class="pone">
 
+            <a href="#">{{ goodsdesc.tite }}</a>
+            <span>{{ goodsdesc.title }}</span>
         </p>
+        <span class="erweima" id="erweima"></span>
+        <p class="ptwo">{{ goodsdesc.ptwo }}</p>
 
         <div class="price">
 
-					<span class="pbox_price">
+					<span class="pbox_price"><span class="yahei">{{ goodsdesc.yahei }}</span>
 
-                    </span>
+                    <i class="pbox_yen">¥</i><em id="item_price">{{ goodsdesc.item_price }}</em></span>
             <span class="pbox_market">
 
-                    </span>
-            <div class="youhui">
-
-                <dt class="youhuiRight" style="float:left;">
-                    <a href="##">
-                        <div class="markwarp">
-
-                        </div>
-                    </a>
-                </dt>
-            </div>
+                    <span>¥</span><del id="mprice" class="yuanjia">{{ goodsdesc.old_price }}</del></span>
         </div>
+
         <!--小图选择-->
         <div class="select">
 
             <div class="selectRight">
                 <ul id="selectrightUl">
+                    <li><a href="#" title="宝宝双肩腰凳多功能背带透气婴儿坐凳" 枣红="" style="border-color: rgb(181, 181, 181);"><img src="{{ goodsdesc.imag }}" class="f1"><span class="gou2" style="display: none;"></span></a></li>
+                    <li><a href="#" title="宝宝双肩腰凳多功能背带透气婴儿坐凳" 枣红="" style="border-color: rgb(181, 181, 181);"><img src="{{ goodsdesc.imag }}" class="f1"><span class="gou2" style="display: none;"></span></a></li>
+                    <li><a href="#" title="宝宝双肩腰凳多功能背带透气婴儿坐凳" 枣红="" style="border-color: rgb(181, 181, 181);"><img src="{{ goodsdesc.imag }}" class="f1"><span class="gou2" style="display: none;"></span></a></li>
+                    <li><a href="#" title="宝宝双肩腰凳多功能背带透气婴儿坐凳" 枣红="" style="border-color: rgb(181, 181, 181);"><img src="{{ goodsdesc.imag }}" class="f1"><span class="gou2" style="display: none;"></span></a></li>
 
                 </ul>
             </div>
         </div>
         <div class="shuliang">
-            <span class="numname">数量</span>
+            <span class="numname">{{ goodsdesc.numname }}</span>
             <p class="addnum">
                 <span id="subtract" class="jian"></span>
                 <input type="text" id="count" class="numbian" value="1"
@@ -1419,7 +1425,7 @@
                 <a href="#" class="join" id="join">加入购物车</a>
             </div>
             <div class="collect" id="collect">
-                <a href="#" class="attendSubmit" id="attendSubmit">
+                <a href="##" class="attendSubmit" id="attendSubmit">
                     <i class="love"></i>
                     <span>收藏</span>
                 </a>
@@ -1522,7 +1528,8 @@
                     <div class="dtit">
                         <img src="{% static 'imag/sp02.gif' %}" alt="商品详情">
                     </div>
-                    <img src="{% static 'imag/416e73a769d0ffabf2ff8de7655abe8b102757809.jpg' %}" class="lazyload" width="750px">
+                    <img src="{% static 'imag/416e73a769d0ffabf2ff8de7655abe8b102757809.jpg' %}" class="lazyload"
+                         width="750px">
                     <img src="{% static 'imag/204ed5e9156f65f25ff6a27748293c36.jpg' %}" class="lazyload" width="750px">
                     <img src="{% static 'imag/111af0265470519375bbdc5a76be20f7.jpg' %}" class="lazyload" width="750px">
                     <img src="{% static 'imag/d26597acc161a5cde08b8515621f7752.jpg' %}" class="lazyload" width="750px">
@@ -1531,7 +1538,8 @@
                     <img src="{% static 'imag/ef22acc87b28309a0c6852d9629351a9.jpg' %}" class="lazyload" width="750px">
                     <img src="{% static 'imag/1677937aaf37ffbb762dd28dc035f4d0.jpg' %}" class="lazyload" width="750px">
                     <img src="{% static 'imag/3461f4b82ab4ba21377bcf0138526673.jpg' %}" class="lazyload" width="750px">
-                    <img src="{% static 'imag/a3352f3061dd10f87f3b892fdba8faa4945821872.jpg' %}" class="lazyload" width="750px">
+                    <img src="{% static 'imag/a3352f3061dd10f87f3b892fdba8faa4945821872.jpg' %}" class="lazyload"
+                         width="750px">
                     <div style="clear: both;"></div>
                 </div>
 
