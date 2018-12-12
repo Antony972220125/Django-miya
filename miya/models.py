@@ -73,6 +73,13 @@ class GoodsDesc(models.Model):
     numname = models.CharField(max_length=20)
 
 
+class Cart(models.Model):
+    user = models.ForeignKey(User)
+    goods = models.ForeignKey(GoodsDesc)
+    number = models.IntegerField()
+    isselect = models.BooleanField(default=True)
+
+
 
 
 

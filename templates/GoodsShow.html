@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
     <script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/xiangqing.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/xiangqing.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
 </head>
@@ -1422,7 +1422,7 @@
         </div>
         <div class="carBox">
             <div class="aBot" id="aBot">
-                <a href="#" class="join" id="join">加入购物车</a>
+                <a href="{% url 'ma:cart' %}" class="join" id="join">加入购物车</a>
             </div>
             <div class="collect" id="collect">
                 <a href="##" class="attendSubmit" id="attendSubmit">
@@ -1779,7 +1779,7 @@
             <li class="lione">
 
                 <i><img src="{% static 'images/smallshopcar.jpg' %}"/></i>
-                购物车
+                <a href="{% url 'ma:cart' %}">购物车</a>
                 <div class="lione1"></div>
             </li>
             <li class="litwo">

@@ -9,10 +9,13 @@
     <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/shoppingCart.css' %}">
     <script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/shoppingCart.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/xiangqing.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/shoppingCart.js' %}"></script>
+
+
 </head>
 <body>
 <div class="bg">
@@ -27,13 +30,13 @@
             <ul>
                 <li>
                     <a href="{% url 'ma:login' %}" class="lis">
-                    {% if img %}
-                        {{ username }}
-                        <img src="/static/img/{{ img }}">
-                        <a href="{% url 'ma:logout' %}">退出登录</a>
-                    {% else %}
-                        登录
-                    {% endif %}
+                        {% if img %}
+                            {{ username }}
+                            <img src="/static/img/{{ img }}">
+                            <a href="{% url 'ma:logout' %}">退出登录</a>
+                        {% else %}
+                            登录
+                        {% endif %}
                     </a>
                 </li>
                 <li><a href="{% url 'ma:register' %}">免费注册</a></li>
@@ -1301,110 +1304,110 @@
 
 <!--logo-->
 <div class="logo">
-			<a href="{% url 'ma:index' %}" class="a-logo">
-				<img src="{% static 'img/miya.jpg' %}"/>
-			</a>
-			<div class="rightStep">
-				<ul class="step">
-					<li class="stepLi">1.我的购物车</li>
-					<li>2.填写核对订单信息</li>
-					<li>3.成功提交订单</li>
-				</ul>
-			</div>
- 		</div>
+    <a href="{% url 'ma:index' %}" class="a-logo">
+        <img src="{% static 'img/miya.jpg' %}"/>
+    </a>
+    <div class="rightStep">
+        <ul class="step">
+            <li class="stepLi">1.我的购物车</li>
+            <li>2.填写核对订单信息</li>
+            <li>3.成功提交订单</li>
+        </ul>
+    </div>
+</div>
 
 <!--我的购物车-->
 <div class="myCart">
-			<div class="myTop">
-            	<span>我的购物车</span>
-       		 </div>
-			<div class="option">
-				<div class="allselect">
-					<div class="icheck">
-						<input class="mckall" value="0" data-checktype="0" type="checkbox">
-					</div>
-					<label>选择</label>
-				</div>
-				<div class="gs gs1">商品</div>
-				<div class="gs">规格</div>
-				<div class="gs">单价</div>
-				<div class="gs">数量</div>
-				<div class="gs">小计</div>
-				<div class="gs">操作</div>
-			</div>
-		</div>
+    <div class="myTop">
+        <span>我的购物车</span>
+    </div>
+    <div class="option">
+        <div class="allselect">
+            					<div class="icheck">
+                                    <input class="mckall" value="0" data-checktype="0" type="checkbox">
+                                </div>
+             <label>选择</label>
+        </div>
+        <div class="gs gs1">商品</div>
+        <div class="gs">规格</div>
+        <div class="gs">单价</div>
+        <div class="gs">数量</div>
+        <div class="gs">小计</div>
+        <div class="gs">操作</div>
+    </div>
+</div>
 
 
 <!--购物车详情-->
 <div class="details">
-		</div>
+</div>
 
 <!--购物车为空时显示提示信息-->
 <div class="empty">
-				<p class="baby">您还没有为您可爱的宝宝挑选任何商品哦~</p>
-				<p class="index">您可以去 <a href="{% url 'ma:index' %}" >首页</a> 挑选宝宝喜欢的商品</p>
-		</div>
+    <p class="baby">您还没有为您可爱的宝宝挑选任何商品哦~</p>
+    <p class="index">您可以去 <a href="{% url 'ma:index' %}">首页</a> 挑选宝宝喜欢的商品</p>
+</div>
 
 <!--结算-->
-<div class="money">
-			<div class="allselect2">
-<!--				<div class="icheck2">
-					<input class="mckall2" value="0" data-checktype="0" type="checkbox">
-				</div>
--->				<label>选择</label>
-			</div>
-			<div class="leiji">
-				<p class="zjp">
+<div class="money" style="display: block">
+    <div class="allselect2">
+        <div class="icheck2">
+            <input class="mckall2" value="0" data-checktype="0" type="checkbox">
+        </div>
+        <label>选择</label>
+    </div>
+    <div class="leiji">
+        <p class="zjp">
 					<span>
 						已选商品
 						<i class="numnum" id="num">0</i>
 						件
 					</span>
-					<span>
+            <span>
 						合计（不含运费和进口税）：
 						<i class="jiaqian" id="jiaqian">0</i>
 					</span>
-				</p>
-			</div>
-		<a href="#" class="last" id="del">去结算</a>
-		</div>
+        </p>
+    </div>
+    <a href="#" class="last" id="del">去结算</a>
+</div>
 <!---信赖，无忧-------------------------------------------------->
 <div class="nfooter">
-	<div class="genuine">
-		<div class="w1100">
-			<a href="#">
-			<i class="icon-g1"></i>
-			<b>可信赖</b>
-			进口母婴特卖
-		</a>
-		<a href="#">
-			<i class="icon-g2"></i>
-			<b>无忧</b>
-			正品保证
-		</a>
-		<a href="#">
-			<i class="icon-g3"></i>
-			<b>14天</b>
-			无理由退货
-		</a>
-		<a href="#">
-			<i class="icon-g4"></i>
-			<b>恒温仓</b>
-			完善的货物仓储
-		</a>
-		<a href="#">
-			<i class="icon-g5"></i>
-			<b>24小时</b>
-			快速发货
-		</a>
-		<a href="#">
-			<i class="icon-g6"></i>
-			<b>100万</b>
-			妈妈口碑信赖
-		</a>
-		</div>
+    <div class="genuine">
+        <div class="w1100">
+            <a href="#">
+                <i class="icon-g1"></i>
+                <b>可信赖</b>
+                进口母婴特卖
+            </a>
+            <a href="#">
+                <i class="icon-g2"></i>
+                <b>无忧</b>
+                正品保证
+            </a>
+            <a href="#">
+                <i class="icon-g3"></i>
+                <b>14天</b>
+                无理由退货
+            </a>
+            <a href="#">
+                <i class="icon-g4"></i>
+                <b>恒温仓</b>
+                完善的货物仓储
+            </a>
+            <a href="#">
+                <i class="icon-g5"></i>
+                <b>24小时</b>
+                快速发货
+            </a>
+            <a href="#">
+                <i class="icon-g6"></i>
+                <b>100万</b>
+                妈妈口碑信赖
+            </a>
+        </div>
 
-	</div>
+    </div>
 </div>
 
 <!----使用帮助---------------------------------------->
@@ -1520,7 +1523,7 @@
             <li class="lione">
 
                 <i><img src="{% static 'images/smallshopcar.jpg' %}"/></i>
-                购物车
+                <a href="{% url 'ma:cart' %}">购物车</a>
                 <div class="lione1"></div>
             </li>
             <li class="litwo">

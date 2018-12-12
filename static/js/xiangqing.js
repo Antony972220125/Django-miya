@@ -43,14 +43,13 @@ $(function(){
 	})
  
 	
-	/*放大镜*/
-	/*_smallImg.hover(function(){
+	/*放大镜*/_smallImg.hover(function(){
 		_bigImg.attr("src",$(this).attr('src'));
 		_bigArea.css("display","block");
 	},function(){
 		_bigArea.css("display","none");
 	});
-	*/
+
 	
 				_smallArea.width( _bigArea.width() * _smallImg.width() / _bigImg.width() );
 				_smallArea.height( _bigArea.height() * _smallImg.height() / _bigImg.height() );
@@ -167,7 +166,8 @@ $(function(){
 		$("#erweima").css("opacity","1");
 	});
 	
-	
+
+
 	$("#count").val('1');
 	/*数量点一次加1*/
 	$("#add").click(function(){
@@ -181,7 +181,8 @@ $(function(){
 		
 	});
 	/*数量点一次减1*/
-	$("#subtract").click(function(){
+	$("#subtract").click
+	(function(){
 		if($("#count").val()>=2){
 			var num=$("#count").val();
 			var a= Number(num);
