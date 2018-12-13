@@ -7,8 +7,9 @@
     <title>登录</title>
     <link rel="stylesheet" href="{% static 'css/login.css' %}"/>
     <script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
+
 </head>
 <body>
 <!--主体内容-->
@@ -33,19 +34,17 @@
         <form class="form" action="{% url 'ma:login' %}" method="post">
             {% csrf_token %}
             <input type="text" id="haoma" placeholder="用户名" class="text" name="username"/>
-            <p class="kong">手机号不能为空</p>
-            <p class="kongkong">手机号错误</p>
+            <p class="kong">用户名不能为空</p>
+            <p class="kongkong">用户名不存在</p>
 
             <input type="password" id="password" class="pass" placeholder="密码" name="password"/>
             <p class="kong1">密码不能为空</p>
             <p class="kong1kong1">密码错误</p>
-
-
-            <p class="kong3">输入的验证码错误</p>
             <div class="yan">
                 <input type="text" id="yzm" placeholder="输入验证码" class="yam"/>
                 <input type="text" id="code1" value="" class="code"/>
                 <a href="#" id="look">看不清</a>
+                <p class="kong3">输入的验证码错误</p>
             </div>
             <p class="zdong">
                 <input checked="checked" id="agreeuser" type="checkbox" class="gou">自动登入

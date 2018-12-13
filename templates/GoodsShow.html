@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
     <script type="text/javascript" src="{% static 'js/jquery-1.12.3.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/xiangqing.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/swiper.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.cookie.js' %}"></script>
 </head>
 <body>
 <div class="bg">
@@ -1357,16 +1357,11 @@
     <div class="showbox-Left">
         <div class="showboxleft-Top" id="showboxleft-Top">
 
-            <div id="smallArea" class="smallPic"
-                 style="position: absolute;width:200px;height: 201px;top:0;left: 0;display: none;">
+            <div id="smallArea" class="smallPic">
             </div>
             <img src="{{ goodsdesc.images }}" id="smallImg" class="img">
         </div>
-        <div class="big" id="bigArea" style="display: none;">
-
-        </div>
         <div class="showboxleft-Bot" id="showboxleft-Bot">
-
             <img src="{{ goodsdesc.images }}" style="border-color: rgb(244, 244, 244);">
             <img src="{{ goodsdesc.images }}" style="border-color: rgb(250, 75, 155);">
         </div>
@@ -1395,11 +1390,10 @@
 
             <div class="selectRight">
                 <ul id="selectrightUl">
-                    <li><a href="#" title="宝宝双肩腰凳多功能背带透气婴儿坐凳" 枣红="" style="border-color: rgb(181, 181, 181);"><img src="{{ goodsdesc.imag }}" class="f1"><span class="gou2" style="display: none;"></span></a></li>
-                    <li><a href="#" title="宝宝双肩腰凳多功能背带透气婴儿坐凳" 枣红="" style="border-color: rgb(181, 181, 181);"><img src="{{ goodsdesc.imag }}" class="f1"><span class="gou2" style="display: none;"></span></a></li>
-                    <li><a href="#" title="宝宝双肩腰凳多功能背带透气婴儿坐凳" 枣红="" style="border-color: rgb(181, 181, 181);"><img src="{{ goodsdesc.imag }}" class="f1"><span class="gou2" style="display: none;"></span></a></li>
-                    <li><a href="#" title="宝宝双肩腰凳多功能背带透气婴儿坐凳" 枣红="" style="border-color: rgb(181, 181, 181);"><img src="{{ goodsdesc.imag }}" class="f1"><span class="gou2" style="display: none;"></span></a></li>
-
+                    <li><a href="#" style="border-color: rgb(181, 181, 181);"><img src="{{ goodsdesc.imag }}" class="f1"><span class="gou2"></span></a></li>
+                    <li><a href="#" style="border-color: rgb(181, 181, 181);"><img src="{{ goodsdesc.imag }}" class="f1"><span class="gou2"></span></a></li>
+                    <li><a href="#" style="border-color: rgb(181, 181, 181);"><img src="{{ goodsdesc.imag }}" class="f1"><span class="gou2"></span></a></li>
+                    <li><a href="#" style="border-color: rgb(181, 181, 181);"><img src="{{ goodsdesc.imag }}" class="f1"><span class="gou2"></span></a></li>
                 </ul>
             </div>
         </div>

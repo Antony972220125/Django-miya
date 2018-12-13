@@ -20,6 +20,7 @@ $(function(){
 // 		$(".dls").css({display: 'none'})
 // 	});
 
+	fdj();
 	
 	/*切换图*/
 	function fdj(){
@@ -43,12 +44,12 @@ $(function(){
 	})
  
 	
-	/*放大镜*/_smallImg.hover(function(){
-		_bigImg.attr("src",$(this).attr('src'));
-		_bigArea.css("display","block");
-	},function(){
-		_bigArea.css("display","none");
-	});
+	// /*放大镜*/_smallImg.hover(function(){
+	// 	_bigImg.attr("src",$(this).attr('src'));
+	// 	_bigArea.css("display","block");
+	// },function(){
+	// 	_bigArea.css("display","none");
+	// });
 
 	
 				_smallArea.width( _bigArea.width() * _smallImg.width() / _bigImg.width() );
@@ -145,7 +146,6 @@ $(function(){
 //			var a = $("<div class='showbox-Left'><img src="+data[i].images+"/></div>")
 //			$(".showBox").append(a)
 		}
-		fdj();
 	})
 	
 	

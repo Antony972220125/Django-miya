@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
-from miya.models import User, Wheel, Goods, TypeGoods, SingleGoods, SingleGoods2, GoodsDesc
+from miya.models import User, Wheel, Goods, TypeGoods, SingleGoods, SingleGoods2, GoodsDesc, Cart
 
 
 def index(request):
@@ -54,7 +54,6 @@ def register(request):
         password = request.POST.get('password')
         u_password = request.POST.get('u_password')
         if password == u_password:
-
             user = User()
             user.username = username
             user.password = genereate_pd(password)
@@ -97,7 +96,8 @@ def cart(request):
     token = request.session.get('token')
     if token:
         user = User.objects.get(token=token)
-        return render(request, 'cart.html', context={'img': user.img, 'username': user.username})
+        carts = Cart.objects.filter(user=user)
+        return render(request, 'cart.html', context={'img': user.img, 'username': user.username, 'carts': carts})
     else:
         return redirect('ma:login')
 

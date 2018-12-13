@@ -162,7 +162,7 @@ $(function(){
 
 	//点击物品信息跳转蜜芽产品购买页
 	$(".pRight").click(function(){
-		location.href="page.html";
+		// location.href="page.html";
 	});
 
 	//鼠标移入图中，会有放大效果
@@ -184,7 +184,7 @@ $(function(){
 				alert("购买成功！");
 				// location.href="page.html";
 			}else{
-				alert("请登录后购买");
+				// alert("请登录后购买");
 				// location.href="register.html";
 			}
 		});

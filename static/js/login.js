@@ -59,29 +59,34 @@ $(function(){
 					randomColor();
 					$("#code1").css("color",randomColor());
 				});
+
 			//登录页面点击登录按钮：号码框、密码相应变化（提示框）
-				$("#come").click(function(){
-					//号码框、密码框中的值都不为空，显示短息验证框并隐藏其他的input框（提示框）
-					if(($("#haoma").val()!='') && ($("#password").val()!='')){
+
+				//号码框失去焦点时提示框显示，若号码框中有值，失去焦点时提示框隐藏（提示框）
+				$("#haoma").blur(function(){
+					if($("#haoma").val()!=''){
 						$(".kong").css("display","none");
-						$(".kong1").css("display","none");
+						$(".kongkong").css("display","none");
+					}else{
+						$(".kong").css("display","block");
+					}
+				});
+
+				//验证码
+				$("#yzm").blur(function(){
+					if($("#yzm").val()!=""){
+						$(".kongg3").css("display","none");
+						$(".kong3").css("display","none");
+					}else{
 						$(".kong3").css("display","block");
-						//号码框、密码框中的值都为空，短息框有值，再隐藏短息验证框（提示框）
-						if($("#duanx").val()!=''){
-							$(".kong3").css("display","none");
-						}
 					}
-					//号码框不为空，显示密码框（提示框）
-					else if($("#haoma").val()!=''){
-						$(".kong1").css("display","block");
-					}
-					//密码框不为空，显示号码框（提示框）
-					else if($("#password").val()!=''){
-						$(".kong").css("display","block");
-					}
-					//号码框、密码框中的值都为空，显示号码框、密码框（提示框）
-					else{
-						$(".kong").css("display","block");
+				})
+			//密码框失去焦点时提示框显示，若密码框中有值，失去焦点时提示框隐藏（提示框）
+				$("#password").blur(function(){
+					if($("#password").val()!=''){
+						$(".kong1").css("display","none");
+						$(".kong1kong1").css("display","none");
+					}else{
 						$(".kong1").css("display","block");
 					}
 				});
@@ -93,12 +98,13 @@ $(function(){
 	$("#come").click(function(){
 		$.each(user, function(i,vall){
 
-					console.log($("#haoma").val()+'/'+vall.phone)
-					if( $("#haoma").val()!=vall.phone ){
-						console.log(333)
+					// console.log($("#haoma").val()+'/'+vall.phone)
+
+					if( $("#haoma").val() == '' ){
+						// console.log(333)
 						$(".kongkong").css("display","block");
 					}
-					else if(($("#password").val()!=vall.userpassword)/*&&($("#password").val()!='')*/){
+					else if(($("#password").val() == '')/*&&($("#password").val()!='')*/){
 						//console.log(555)
 						$(".kong1kong1").css("display","block");
 					}
@@ -109,9 +115,9 @@ $(function(){
 						$(".kong3").css("display","block");
 					}
 					else{
-						console.log(44444)
+						// console.log(44444)
 						$(".kongkong").css("display","none");
-						$("#come").attr("href","page.html");
+						// $("#come").attr("href","page.html");
 
 					//进入页面首先创建cookie,存放用户名
 						var Name = $("#haoma").val();
